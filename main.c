@@ -7,7 +7,7 @@
 * Related Document: See README.md
 *
 *******************************************************************************
-* Copyright 2021-2022, Cypress Semiconductor Corporation (an Infineon company) or
+* Copyright 2021-2023, Cypress Semiconductor Corporation (an Infineon company) or
 * an affiliate of Cypress Semiconductor Corporation.  All rights reserved.
 *
 * This software, including source code, documentation and related
@@ -45,7 +45,8 @@
  ******************************************************************************/
 #include "cy_pdl.h"
 #include "cybsp.h"
-
+#include <stdio.h>
+#include <inttypes.h>
 
 /*******************************************************************************
 * Macros
@@ -84,6 +85,7 @@ void User_Switch_Interrupt_Handler(void);
 int main(void)
 {
     cy_rslt_t result;
+    cy_en_sysint_status_t intr_result;
 
     /* Initialize the device and board peripherals */
     result = cybsp_init();
@@ -95,8 +97,8 @@ int main(void)
     }
 
     /* Initialize Switch GPIO interrupt */
-    result = Cy_SysInt_Init(&User_Switch_intr_config, &User_Switch_Interrupt_Handler);
-    if (result != CY_SYSINT_SUCCESS)
+    intr_result = Cy_SysInt_Init(&User_Switch_intr_config, &User_Switch_Interrupt_Handler);
+    if (intr_result != CY_SYSINT_SUCCESS)
     {
         CY_ASSERT(CY_ASSERT_FAILED);
     }
