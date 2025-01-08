@@ -5,7 +5,7 @@ This code example demonstrates a simple switch and LED interface on EZ-PD&trade;
 
 [View this README on GitHub.](https://github.com/Infineon/mtb-example-pmg1-led-sw-interface)
 
-[Provide feedback on this code example.](https://cypress.co1.qualtrics.com/jfe/form/SV_1NTns53sK2yiljn?Q_EED=eyJVbmlxdWUgRG9jIElkIjoiQ0UyMzM4OTciLCJTcGVjIE51bWJlciI6IjAwMi0zMzg5NyIsIkRvYyBUaXRsZSI6IkVaLVBEJnRyYWRlOyBQTUcxIE1DVTogTEVEIGFuZCBzd2l0Y2ggaW50ZXJmYWNlIiwicmlkIjoiYW5raXRhIiwiRG9jIHZlcnNpb24iOiIyLjEuMCIsIkRvYyBMYW5ndWFnZSI6IkVuZ2xpc2giLCJEb2MgRGl2aXNpb24iOiJNQ0QiLCJEb2MgQlUiOiJXSVJFRCIsIkRvYyBGYW1pbHkiOiJUWVBFLUMifQ==)
+[Provide feedback on this code example.](https://cypress.co1.qualtrics.com/jfe/form/SV_1NTns53sK2yiljn?Q_EED=eyJVbmlxdWUgRG9jIElkIjoiQ0UyMzM4OTciLCJTcGVjIE51bWJlciI6IjAwMi0zMzg5NyIsIkRvYyBUaXRsZSI6IkVaLVBEJnRyYWRlOyBQTUcxIE1DVTogTEVEIGFuZCBzd2l0Y2ggaW50ZXJmYWNlIiwicmlkIjoiYW5raXRhIiwiRG9jIHZlcnNpb24iOiIyLjIuMCIsIkRvYyBMYW5ndWFnZSI6IkVuZ2xpc2giLCJEb2MgRGl2aXNpb24iOiJNQ0QiLCJEb2MgQlUiOiJXSVJFRCIsIkRvYyBGYW1pbHkiOiJUWVBFLUMifQ==)
 
 
 ## Requirements
@@ -22,6 +22,7 @@ This code example demonstrates a simple switch and LED interface on EZ-PD&trade;
 - Arm&reg; Compiler v6.13 (`ARM`)
 - IAR C/C++ Compiler v8.42.2 (`IAR`)
 
+
 ## Supported kits (make variable 'TARGET')
 
 - [EZ-PD&trade; PMG1-S0 Prototyping Kit](https://www.infineon.com/CY7110) (`PMG1-CY7110`) – Default value of `TARGET`
@@ -29,6 +30,8 @@ This code example demonstrates a simple switch and LED interface on EZ-PD&trade;
 - [EZ-PD&trade; PMG1-S2 Prototyping Kit](https://www.infineon.com/CY7112) (`PMG1-CY7112`)
 - [EZ-PD&trade; PMG1-S3 Prototyping Kit](https://www.infineon.com/CY7113) (`PMG1-CY7113`)
 - [EZ-PD&trade; PMG1-B1 Prototyping Kit](https://www.infineon.com/EVAL_PMG1_B1_DRP) (`EVAL_PMG1_B1_DRP`)
+- [EZ-PD&trade; PMG1-S1 DRP Prototyping Kit](https://www.infineon.com/EVAL_PMG1_S1_DRP) (`EVAL_PMG1_S1_DRP`)
+- [EZ-PD&trade; PMG1-S3 DUALDRP Prototyping Kit](https://www.infineon.com/EVAL_PMG1_S3_DUALDRP) (`EVAL_PMG1_S3_DUALDRP`)
 
 
 ## Hardware setup
@@ -42,6 +45,7 @@ See the [ModusToolbox&trade; tools package installation guide](https://www.infin
 
 
 ## Using the code example
+
 
 ### Create the project
 
@@ -63,7 +67,7 @@ The ModusToolbox&trade; tools package provides the Project Creator as both a GUI
 
    > **Note:** Depending on how you open the Project Creator tool, these fields may be pre-selected for you.
 
-   b.	Select this code example from the list by enabling its check box.
+   b. Select this code example from the list by enabling its check box.
 
    > **Note:** You can narrow the list of displayed examples by typing in the filter box.
 
@@ -72,6 +76,7 @@ The ModusToolbox&trade; tools package provides the Project Creator as both a GUI
    d. Click **Create** to complete the application creation process.
 
 </details>
+
 
 <details><summary><b>Use Project Creator CLI</b></summary>
 
@@ -157,7 +162,7 @@ For more details, see the [ModusToolbox&trade; tools package user guide](https:/
 
 1. Ensure that the steps listed in the [Hardware setup](#hardware-setup) section are completed.
 
-2. Ensure that the jumper shunt on power selection jumper (J5) is placed at position 2-3 to enable programming for PMG1-CY7110, PMG1-CY7111, PMG1-CY7112, and PMG1-CY7113 prototyping kits. Skip this step for EVAL_PMG1_B1_DRP kit.
+2. Ensure that the jumper shunt on the power selection jumper (J5) is placed at 2-3 position to enable programming for PMG1-CY7110, PMG1-CY7111, PMG1-CY7112, PMG1-CY7113, EVAL_PMG1_S1_DRP, and EVAL_PMG1_S3_DUALDRP prototyping kits. Skip this step for the EVAL_PMG1_B1_DRP kit.
 
 3. Connect the board to your PC using the USB cable through the KitProg3 USB Type-C port (J1).
 
@@ -190,9 +195,9 @@ For more details, see the [ModusToolbox&trade; tools package user guide](https:/
       ```
    </details>
 
-5. After programming the kit, disconnect the USB cable. Move to the next step for EVAL_PMG1_B1_DRP kit. Change the position on the power selection jumper (J5) to 1-2 to power the kit through the USB PD port (J10) for PMG1-CY7110, PMG1-CY7111, PMG1-CY7112, and PMG1-CY7113 prototyping kits. 
+5. After programming the kit, disconnect the USB cable. Move to the next step for the EVAL_PMG1_B1_DRP kit. Change the position on the power selection jumper (J5) to 1-2, to power the kit through the USB PD port (J10) for PMG1-CY7110, PMG1-CY7111, PMG1-CY7112, PMG1-CY7113, EVAL_PMG1_S1_DRP, and EVAL_PMG1_S3_DUALDRP prototyping kits.
 
-6. The application starts automatically when power is applied to USB PD port (J10). Confirm that the kit LED toggles when the user switch is pressed.
+6. The application starts automatically when power is applied to the USB PD port (J10). Confirm that the kit LED toggles when the user switch is pressed.
 
 
 ## Debugging
@@ -202,7 +207,7 @@ You can debug the example to step through the code.
 
 
 <details><summary><b>In Eclipse IDE</b></summary>
-Use the **\<Application Name> Debug (KitProg3_MiniProg4)** configuration in the **Quick Panel**. Ensure that the board is connected to your PC using the USB cable through the KitProg3 USB Type-C port (J1) and for PMG1-CY7110, PMG1-CY7111, PMG1-CY7112, and PMG1-CY7113 prototyping kits the jumper shunt on power selection jumper (J5) is placed at position 1-2.
+Use the **\<Application Name> Debug (KitProg3_MiniProg4)** configuration in the **Quick Panel**. Ensure that the board is connected to your PC using the USB cable through the KitProg3 USB Type-C port (J1) and for PMG1-CY7110, PMG1-CY7111, PMG1-CY7112, PMG1-CY7113, EVAL_PMG1_S1_DRP, and EVAL_PMG1_S3_DUALDRP prototyping kits the jumper shunt on the power selection jumper (J5) is placed at 1-2 position.
 
 See the "Debug mode" section in the kit user guide for debugging the application on the CY7110 prototyping kit. For more details, see the "Program and debug" section in the [Eclipse IDE for ModusToolbox&trade; user guide](https://www.infineon.com/MTBEclipseIDEUserGuide).
 
@@ -212,15 +217,46 @@ See the "Debug mode" section in the kit user guide for debugging the application
 <details><summary><b>In other IDEs</b></summary>
 
 Follow the instructions in your preferred IDE.
-</details>
 
+</details>
 
 
 ## Design and implementation
 
-On reset, the switch interrupt is enabled to detect the falling edge. The port connections depend on the kit, and can be edited from the device BSP. When a switch press is detected, the firmware toggles the LED. Press the user switch repeatedly to see the LED toggle at each switch press.
+1. Open the project in the Eclipse IDE for ModusToolbox&trade;. 
 
-**Figure 2. Firmware flowchart**
+2. In the **Quick Panel** > **BSP Configurators**,  click **Device Configurator**. 
+
+3. In the **Device Configurator**, select the **Pins** tab.
+   
+   a. Select the **CYBSP_USER_SW** pin associated with the user switch and check for the following:
+   - **Drive Mode**: Resistive Pull-Up. Input buffer on
+   - **Initial Drive State**: High(1)
+   - **Threshold**: CMOS
+   - **Slew Rate**: Fast
+   - Ensure to select the **Store Config in Flash** as shown in **Figure 1**.
+
+      **Figure 1. User switch settings**
+
+      <img src = "images/pins-sw.png" width = "1300"/>
+
+   b. For the PMG1-S3 DUALDRP kit, ensure to deselect the **CYBSP_USER_LED2** pin. Select the **CYBSP_USER_LED** pin associated to the user LED and check for the following:
+   - **Drive Mode**: Strong Drive, Input buffer off
+   - **Threshold**: CMOS
+   - **Slew Rate**: Fast
+   - Ensure to select the **Store Config in Flash** as shown in **Figure 2**.
+
+      **Figure 2. User LED settings**
+
+      <img src = "images/pins-led.png" width = "1300"/>
+
+
+On reset, the switch interrupt is enabled to detect the falling edge. The port connections depend on the kit and can be edited from the device BSP. When a switch press is detected, the firmware toggles the LED. Press the user switch repeatedly to see the LED toggle at each switch press.
+
+For the PMG1-S3 DUALDRP kit, only the LED3 will toggle for this code example. 
+
+
+**Figure 3. Firmware flowchart**
 
 <img src = "images/firmware-flowchart.png" width = "200"/>
 
@@ -243,16 +279,20 @@ This application reads the user switch input via an external GPIO interrupt and 
 
 Resources | Links
 -----------|------------------
-Application notes |[AN232553](https://www.infineon.com/AN232553) – Getting started with EZ-PD&trade; PMG1 MCU on ModusToolbox&trade; software <br> [AN232565](https://www.infineon.com/an232565) – EZ-PD&trade; PMG1 hardware design guidelines and checklist <br> [AN238945](https://www.infineon.com/an238945) – Getting started with EZ-PD&trade; PMG1-B1 MCU using ModusToolbox&trade;
+Application notes |[AN232553](https://www.infineon.com/an232553) – Getting started with EZ-PD&trade; PMG1 MCU on ModusToolbox&trade; software <br> [AN232565](https://www.infineon.com/an232565) – EZ-PD&trade; PMG1 hardware design guidelines and checklist <br> [AN238945](https://www.infineon.com/an238945) – Getting started with EZ-PD&trade; PMG1-B1 MCU using ModusToolbox&trade;
 Code examples  | [Using ModusToolbox&trade;](https://github.com/Infineon/Code-Examples-for-ModusToolbox-Software) on GitHub
 Device documentation | [EZ-PD&trade; PMG1 MCU datasheets](https://www.infineon.com/PMG1DS) <br> [EZ-PD&trade; PMG1 MCU technical reference manuals](https://www.infineon.com/cms/en/search.html#!view=downloads&term=pmg&doc_group=Additional%20Technical%20Information)
 Development kits | Select your kits from the [Evaluation board finder](https://www.infineon.com/cms/en/design-support/finder-selection-tools/product-finder/evaluation-board).
 Libraries on GitHub | [mtb-pdl-cat2](https://github.com/Infineon/mtb-pdl-cat2) – Peripheral Driver Library (PDL)
 Tools  | [ModusToolbox&trade;](https://www.infineon.com/modustoolbox) – ModusToolbox&trade; software is a collection of easy-to-use libraries and tools enabling rapid development with Infineon MCUs for applications ranging from wireless and cloud-connected systems, edge AI/ML, embedded sense and control, to wired USB connectivity using PSoC&trade; Industrial/IoT MCUs, AIROC&trade; Wi-Fi and Bluetooth&reg; connectivity devices, XMC&trade; Industrial MCUs, and EZ-USB&trade;/EZ-PD&trade; wired connectivity controllers. ModusToolbox&trade; incorporates a comprehensive set of BSPs, HAL, libraries, configuration tools, and provides support for industry-standard IDEs to fast-track your embedded application development.
 
+<br>
+
+
 ## Other resources
 
 Infineon provides a wealth of data at [www.infineon.com](https://www.infineon.com) to help you select the right device, and quickly and effectively integrate it into your design.
+
 
 ## Document history
 
@@ -261,9 +301,10 @@ Document title: *CE233897* – *EZ-PD&trade; PMG1 MCU: LED and switch interface*
  Version | Description of change
  ------- | ---------------------
  1.0.0   | New code example 
- 1.1.0   | Update to support PMG1-S3 BSP
- 2.0.0   | Major update to support ModusToolbox&trade; v3.0. This version is **not**  backward compatible with previous versions of ModusToolbox&trade;
- 2.1.0   | Update to support EVAL_PMG1_B1_DRP kit
+ 1.1.0   | Updated to support PMG1-S3 BSP
+ 2.0.0   | Major update to support ModusToolbox&trade; v3.0. This version is not backward compatible with previous versions of ModusToolbox&trade;
+ 2.1.0   | Updated to support EVAL_PMG1_B1_DRP kit
+ 2.2.0   | Updated to support EVAL_PMG1_S1_DRP and EVAL_PMG1_S3_DUALDRP kits
 <br>
 
 
